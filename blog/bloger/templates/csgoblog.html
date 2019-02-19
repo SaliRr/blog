@@ -1,0 +1,12 @@
+{% extends 'mainblog.html' %}
+
+{% block articles %}
+<p></p>
+    {% for articles in items %}
+    <a href = '/cybercheats/gamescheats/csgo/{{articles.id}}/'><h1>{{articles.csgo_title}}</h1></a>
+    <span>Статья опубликована {{articles.csgo_date}}</span>
+    <span> Автор статьи {{articles.csgo_author.get_full_name}}</span>
+    {% endfor %}
+    <hr>
+    {% include 'pagination.html'%}
+{% endblock %}

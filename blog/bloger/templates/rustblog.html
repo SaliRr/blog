@@ -1,0 +1,11 @@
+{% extends 'mainblog.html' %}
+
+{% block articles %}
+<p></p>
+    {% for articles in items %}
+    <a href = '/cybercheats/gamescheats/rust/{{articles.id}}/'><h1>{{articles.rust_title}}</h1></a>
+    <span>Published  {{articles.rust_date}}</span>
+    <hr>
+    {% endfor %}
+    {% include 'pagination.html'%}
+{% endblock %}

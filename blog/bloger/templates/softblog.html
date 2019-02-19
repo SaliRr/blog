@@ -1,0 +1,12 @@
+{% extends 'mainblog.html' %}
+
+{% block articles %}
+<p></p>
+    {% for articles in items %}
+    <a href = '/cybercheats/soft/{{articles.id}}/'><h1>{{articles.soft_title}}</h1></a>
+    <span>Статья опубликована {{articles.soft_date}}</span>
+    <span> Автор статьи {{articles.soft_author.get_full_name}}</span>
+    {% endfor %}
+    <hr>
+    {% include 'pagination.html'%}
+{% endblock %}

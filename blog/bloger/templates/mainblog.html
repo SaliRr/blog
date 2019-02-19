@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  </head>
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<body>
+  <style>
+  .purputg{
+    display: inline-block;
+    float: right;
+  }
+  body{
+    background-image: url(https://i.pinimg.com/originals/b2/92/71/b29271f14757227876ba3d77ff854759.jpg);
+    background-repeat:no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+  }
+  .glav3{
+    color:white;
+    text-shadow: black 0 0 4px;
+  }
+  .glav{
+    
+    font-size:1.4em;
+  }
+  .glav2{
+
+    font-size:1.1em;
+  }
+  .ssilki{
+    font-family:Tahoma, sans-serif;
+    
+    font-size:1.6em;
+  }
+  .container2 {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align:center;
+  }
+  .containerforarticles {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background: rgba(255,255,255, 0.2)
+  }
+  a:hover {
+    color: #838a92;
+    text-decoration: none;
+  }
+  .headersans{
+    font-family:Geneva, Arial, Helvetica, sans-serif;
+    font-style:italic;
+    color:black;
+    font-size:1.4em;
+  }
+  @media (min-width: 1200px) {
+    .containerforarticles {
+        max-width:1140px
+    }
+}
+@media (min-width: 576px) {
+    .containerforarticles {
+        max-width:540px
+    }
+}
+@media (min-width: 768px) {
+    .containerforarticles {
+        max-width:720px
+    }
+}
+@media (min-width: 992px) {
+    .containerforarticles {
+        max-width:960px
+    }
+}
+
+  }
+  @media (min-width: 1200px) {
+    .container2 {
+        max-width:1140px
+    }
+}
+@media (min-width: 576px) {
+    .container2 {
+        max-width:540px
+    }
+}
+@media (min-width: 768px) {
+    .container2 {
+        max-width:720px
+    }
+}
+@media (min-width: 992px) {
+    .container2 {
+        max-width:960px
+    }
+}
+  </style>
+    
+      <div class="sticky-top">
+      <div class="alert alert-info" role="alert">
+      <div class='container'>
+      <ul class="list-inline">
+      <li class="list-inline-item"><a class='headersans' href = '/cybercheats/main/'>Главная |</a></li>
+      <li class="list-inline-item"><a class='headersans' href = '/cybercheats/gamescheats/'>Читы для игр |</a></li>
+      <li class="list-inline-item"><a class='headersans' href = '/cybercheats/programms/'>Программы</a></li>
+        <div class='purputg'>
+      <li class="list-inline-item"><a href = '/cybercheats/profile/'>Профиль |</a></li>
+        {% if user.is_authenticated %}
+         <li class="purputg" ><a href = '/accounts/logout/'>Выйти ({{ user.get_full_name }})</a></li>
+        {% else %}
+         <li class="purputg" ><a href = '/accounts/vk/login/'>Войти через Вконтакте</a></li>
+        {% endif %}
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+   
+    </ul>
+    <div class='container'>
+    {% block add %}
+    {% endblock %}
+
+    {% block login %}
+    {% endblock %}
+
+    {% block body %}
+    {% endblock %}
+
+    {% block articles %}
+    {% endblock %}
+
+    {% block end %}
+    {% endblock %}
+    </div>
+    
+
+	</body>
+</html>
