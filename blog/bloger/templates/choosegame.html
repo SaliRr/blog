@@ -1,0 +1,18 @@
+{% extends 'mainblog.html' %}
+{% block body %}
+<div class='container2'>
+<div class='glav2'>
+<ul class="list-group">
+{% if user.is_authenticated %}
+<li class="list-group-item"><a href = '/cybercheats/gamescheats/warface/add/'>Добавить статью к игре Warface</a></li>
+<li class="list-group-item"><a href = '/cybercheats/gamescheats/csgo/add/'>Добавить статью к Csgo</a></li>
+<li class="list-group-item"><a href = '/cybercheats/gamescheats/rust/add/'>Добавить статью к игре Rust</a></li>
+<li class="list-group-item"><a href = '/cybercheats/gamescheats/fortnite/add/'>Добавить статью к игре Fortnite</a></li>
+<li class="list-group-item"><a href = '/cybercheats/gamescheats/anothergame/add/'>Добавить статью к другой игре</a></li>
+{% else %}
+<h1>Авторизируйтесь, чтобы добавить статью</h1>
+{% endif %}
+</ul>
+</div>
+</div>
+{% endblock %}
