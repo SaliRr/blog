@@ -1,12 +1,17 @@
 {% extends 'mainblog.html' %}
-
+{% load staticfiles %}
 {% block articles %}
 <p></p>
+<div class='containerforarticles'>
     {% for articles in items %}
     <a href = '/cybercheats/gamescheats/anothergame/{{articles.id}}/'><h1>{{articles.anothergame_title}}</h1></a>
-    <span>Published  {{articles.anothergame_date}}</span>
-    <span> Автор статьи {{articles.anothergame_author.get_full_name}}</span>
-    {% endfor %}
+   <span>Статья опубликована {{articles.anothergame_date}} |</span>
+    <span> Автор статьи <strong>{{articles.anothergame_author.get_full_name}}</strong></span>
     <hr>
+    {% endfor %}
+    </div>
+    <div class='container2'>
     {% include 'pagination.html'%}
+    </div>
 {% endblock %}
+    

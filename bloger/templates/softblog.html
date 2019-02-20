@@ -1,12 +1,19 @@
-{% extends 'mainblog.html' %}
 
+
+{% extends 'mainblog.html' %}
+{% load staticfiles %}
 {% block articles %}
 <p></p>
+<div class='containerforarticles'>
     {% for articles in items %}
-    <a href = '/cybercheats/soft/{{articles.id}}/'><h1>{{articles.soft_title}}</h1></a>
-    <span>Статья опубликована {{articles.soft_date}}</span>
-    <span> Автор статьи {{articles.soft_author.get_full_name}}</span>
-    {% endfor %}
+    <a href = '/cybercheats/soft/{{articles.id}}}/'><h1>{{articles.soft_title}}</h1></a>
+   <span>Статья опубликована {{articles.soft_date}} |</span>
+    <span> Автор статьи <strong>{{articles.soft_author.get_full_name}}</strong></span>
     <hr>
+    {% endfor %}
+    </div>
+    <div class='container2'>
     {% include 'pagination.html'%}
+    </div>
 {% endblock %}
+    

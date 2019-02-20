@@ -1,12 +1,17 @@
 {% extends 'mainblog.html' %}
-
+{% load staticfiles %}
 {% block articles %}
 <p></p>
+<div class='containerforarticles'>
     {% for articles in items %}
     <a href = '/cybercheats/gamescheats/fortnite/{{articles.id}}/'><h1>{{articles.fortnite_title}}</h1></a>
-    <span>Статья опубликована {{articles.fortnite_date}}</span>
-    <span> Автор статьи {{articles.fortnite_author.get_full_name}}</span>
-    {% endfor %}
+   <span>Статья опубликована {{articles.fortnite_date}} |</span>
+    <span> Автор статьи <strong>{{articles.fortnite_author.get_full_name}}</strong></span>
     <hr>
+    {% endfor %}
+    </div>
+    <div class='container2'>
     {% include 'pagination.html'%}
+    </div>
 {% endblock %}
+    
