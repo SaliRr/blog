@@ -1,0 +1,7 @@
+{% block login %}
+    <form action = '/cybercheats/reg/' method = 'post'>
+    {% csrf_token %}
+    {{ forms }}
+    <input type = 'submit' value = 'зарегистрироваться'>
+    </form>
+{% endblock %}

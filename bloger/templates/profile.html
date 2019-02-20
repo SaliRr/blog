@@ -1,0 +1,9 @@
+{% extends 'mainblog.html' %}
+{% block body %}
+<div class='container2'>
+<p>ID пользователя: <strong>{{ user }}</strong></p>
+<p>Имя пользователя: <strong>{{ user.get_short_name }}</strong></p>
+<p>Полное имя пользователя:<strong>{{ user.get_full_name }}</strong></p>
+<a href='https://vk.com/settings'>Изменить профиль</a>
+</div>
+{% endblock %}

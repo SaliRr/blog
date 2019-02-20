@@ -1,0 +1,19 @@
+
+
+{% extends 'mainblog.html' %}
+{% block body %}
+<div class='container2'>
+<h2>Добавление программы</h2>
+<form action = '/cybercheats/programms/adds/' method = 'post'>
+    {% csrf_token %}
+    <p>Загловок статьи:{{ forms.soft_title }}</p>
+    
+    <p><small>В заголовке укажите название чита*</small></p>
+    
+    <span>Описание:</span>
+    <p>{{ forms.soft_body }}</p>
+    <p class='glav3'>Ссылка на чит:{{ forms.soft_cheatlink }}</p>
+    <input type='submit' value = 'отправить' class='btn btn-success'>
+</form>
+</div>
+{% endblock %}

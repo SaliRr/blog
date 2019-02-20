@@ -1,0 +1,33 @@
+{% extends 'mainblog.html' %}
+{% block body %}
+    <div class='containerforarticles'>
+    <h1>{{articles.rust_title}}</h1>
+    <div class='glav2'>
+    <span>Опубликовано:{{articles.rust_date}}</span>
+    
+    <p>{{articles.rust_body}}</p>
+    <hr>
+    <p>Ссылка на чит:{{articles.rust_cheatlink}}</p>
+    <hr>
+    <p>Комментарии:</p>
+    {% for comments in comment %}
+        <p>Комментарий пользователя: <strong>{{ comments.comment_rust_author.get_full_name }}</strong></p>
+        <p>Опубликовано:{{ comments.comment_date }}</p>
+        <p>{{ comments.comment_text }}</p>
+       <hr>
+    {% endfor %}
+
+    <form action = '/cybercheats/gamescheats/rust/article/{{ articles.id }}/' method = 'post'>
+        {% csrf_token %}
+        {% if user %}
+        {{ form }}
+        <input type = 'submit' value = 'Добавить' class='btn btn-primary'>
+        {% else %}
+        <p>Чтобы оставить комментарий войдите или зарегистрируйтесь</p>
+        {% endif %}
+        
+      
+    </form>
+    
+    </div>
+{% endblock %}
